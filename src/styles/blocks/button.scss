@@ -1,0 +1,22 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 48px;
+  background-color: $c-brown;
+  cursor: pointer;
+  border: none;
+  color: $c-white;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all $anim-time;
+  outline: 4px solid $c-brown;
+  outline-offset: -4px;
+
+  &:hover {
+    outline-offset: 4px;
+    box-shadow: 0px 0px 5px 5px $c-light-brown;
+  }
+}
