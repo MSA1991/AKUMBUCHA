@@ -1,1 +1,1 @@
-Preview: (https://msa1991.github.io/AKUMBUCHA/)
+Preview link: (https://msa1991.github.io/AKUMBUCHA/)
