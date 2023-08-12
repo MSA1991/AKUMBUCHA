@@ -9,7 +9,7 @@
   &__body {
     background-color: $c-white;
 
-    &--with-menu {
+    &--overflow {
       overflow: hidden;
     }
   }
@@ -30,17 +30,17 @@
     // }
   }
 
-  &__menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    transform: translateY(-100%);
-    transition: transform 0.3s;
+  // &__menu {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   z-index: 1;
+  //   transform: translateY(-100%);
+  //   transition: transform 0.3s;
 
-    &:target {
-      transform: translateY(0);
-    }
-  }
+  //   &:target {
+  //     transform: translateY(0);
+  //   }
+  // }
 }

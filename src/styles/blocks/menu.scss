@@ -1,0 +1,22 @@
+.menu {
+  position: fixed;
+  top: $height-header-top - 2px;
+  right: 0;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  transform: translateX(100%);
+  transition: transform $anim-time;
+  background-color: $c-black;
+
+  &--open {
+    transform: translateY(0);
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}

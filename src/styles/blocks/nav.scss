@@ -2,6 +2,16 @@
   &__list{
     display: flex;
     gap: 40px;
+
+    &--menu {
+      flex-direction: column;
+      align-items: center;
+      transform: translateY(-$height-header-top);
+
+      @media (orientation: landscape) {
+        transform: translateY(-$height-header-top + 20px);
+      }
+    }
   }
 
   &__link {
@@ -11,6 +21,23 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: color $anim-time;
+
+    &--menu {
+      font-size: 24px;
+      position: relative;
+      left: 100px;
+      opacity: 0;
+      transition: all $anim-time;
+
+      &-active {
+        left: 0;
+        opacity: 1;
+      }
+
+      @include onTablet {
+        font-size: 30px;
+      }
+    }
 
     &::after {
       content: "";

@@ -1,0 +1,10 @@
+.anim {
+  transform: translateY(-15%);
+  transition: all 1s;
+  opacity: 0;
+
+  &--active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

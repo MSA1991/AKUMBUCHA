@@ -1,6 +1,6 @@
 .header {
   &__top {
-    height: 80px;
+    height: $height-header-top;
     background-color: $c-black;
     padding-top: 14px;
 
@@ -27,24 +27,59 @@
     }
   }
 
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
   &__content {
     display: flex;
-    // gap: 60px;
-    justify-content: space-between;
-    margin-top: 180px;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 30px;
+    margin-top: 60px;
+
+    @include onTablet {
+      margin-top: 120px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: inherit;
+    }
+
+    @include onDesktop {
+      margin-top: 180px;
+    }
   }
 
   &__text {
-    width: max-content;
+    display: flex;
+    align-items: center;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
+
+    @include onTablet {
+      align-items: initial;
+      gap: 30px;
+    }
   }
 
   &__title {
-    font-size: 84px;
+    font-size: 44px;
     font-weight: 700;
     line-height: 100%;
+
+    @include onTablet {
+      font-size: 54px;
+    }
+
+    @include onDesktop {
+      font-size: 84px;
+    }
 
     & span {
       color: $c-light-brown;
@@ -53,7 +88,19 @@
   }
 
   &__desc {
-    width: 450px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+
+    @include onTablet {
+      text-align: initial;
+      width: 350px;
+    }
+
+    @include onDesktop {
+      width: 450px;
+      font-size: 16px;
+    }
   }
 
   &__img-container{
@@ -62,20 +109,48 @@
     &::after {
       content: "";
       display: block;
-      width: 400px;
-      height: 400px;
+      width: 45%;
+      height: 45%;
       position: absolute;
-      bottom: -20px;
-      left: -250px;
+      bottom: -50px;
+      left: -40px;
       z-index: -1;
-      transform: rotate(-140deg);
+      transform: rotate(60deg) rotateX(180deg);
       background-image: url('../images/arrow.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include onTablet {
+        transform: rotate(-140deg) rotateX(0deg);
+        width: 240px;
+        height: 240px;
+        bottom: -30px;
+        left: -140px;
+      }
+
+      @include onDesktop {
+        width: 380px;
+        height: 380px;
+        bottom: -20px;
+        left: -250px;
+      }
     }
   }
 
   &__img {
-    width: 500px;
-    transform: translateY(-40px);
-    filter: drop-shadow(0 0 20px $c-brown);
+    padding-left: 70px;
+    width: 100%;
+    filter: drop-shadow(10px 10px 20px $c-brown);
+
+    @include onTablet {
+      padding-left: 0px;
+      width: 352px;
+      position: relative;
+      top: -40px;
+    }
+
+    @include onDesktop {
+      width: 500px;
+    }
   }
 }
