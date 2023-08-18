@@ -5,13 +5,11 @@
   background: transparent;
   cursor: pointer;
   display: block;
+  position: relative;
+  z-index: 3;
 
   @include onDesktop {
     display: none;
-  }
-
-  &:hover span {
-    background-color: $c-light-brown;
   }
 
   input {
@@ -62,5 +60,10 @@
       transform-origin: left center;
       transform: translateY(-100%);
     }
+  }
+
+  &:hover span {
+    background-color: $c-blue;
+    box-shadow: 0 0 2px 1px $c-blue;
   }
 }

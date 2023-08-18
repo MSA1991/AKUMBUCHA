@@ -1,13 +1,18 @@
 .menu {
   position: fixed;
-  top: $height-header-top - 2px;
+  top: 0;
   right: 0;
-  z-index: 10;
+  z-index: 2;
   height: 100%;
   width: 100%;
   transform: translateX(100%);
   transition: transform $anim-time;
-  background-color: $c-black;
+  background-color: $c-purple;
+  box-shadow: inset 0px 0px 100px 80px $c-black;
+
+  @include onTablet {
+    box-shadow: inset 0px 0px 120px 120px $c-black;
+  }
 
   &--open {
     transform: translateY(0);

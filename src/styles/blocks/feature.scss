@@ -1,0 +1,32 @@
+.feature {
+  padding: 40px 0;
+  background: linear-gradient(0deg, $c-black, $c-purple 30%);
+
+  @include onTablet {
+    background: linear-gradient(270deg, $c-black, $c-purple 40%);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: calc(50% - 10px);
+
+    @include onDesktop {
+      flex-basis: auto;
+    }
+  }
+}

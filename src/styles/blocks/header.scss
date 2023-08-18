@@ -1,29 +1,44 @@
 .header {
-  &__top {
-    height: $height-header-top;
-    background-color: $c-black;
-    padding-top: 14px;
+  overflow: hidden;
+  padding: 14px 0 40px;
+  background: linear-gradient(0deg, $c-purple, $c-black 35%);
 
-    &-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+  @include onTablet {
+    padding-bottom: 100px;
+    background: linear-gradient(90deg, $c-purple, $c-black 30%);
+  }
+
+  @include onDesktop {
+    padding-bottom: 180px;
+    background: linear-gradient(90deg, $c-purple, $c-black 40%);
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px;
+
+    @include onTablet {
+      margin: 0;
     }
   }
 
-
   &__logo {
-    display: block;
+    width: 116px;
     height: 52px;
-    width: auto;
+    outline: none;
+    position: relative;
+    z-index: 3;
 
     & svg {
       fill: $c-white;
-      transition: fill $anim-time;
+      transition: all $anim-time;
     }
 
     &:hover svg {
-      fill: $c-light-brown;
+      fill: $c-blue;
+      filter: drop-shadow(0 0 2px $c-blue);
     }
   }
 
@@ -36,10 +51,10 @@
   }
 
   &__content {
+    position: relative;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    gap: 30px;
     margin-top: 60px;
 
     @include onTablet {
@@ -57,14 +72,16 @@
   &__text {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: max-content;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    z-index: 2;
+    position: relative;
 
     @include onTablet {
       align-items: initial;
-      gap: 30px;
+      gap: 40px;
     }
   }
 
@@ -72,25 +89,23 @@
     font-size: 44px;
     font-weight: 700;
     line-height: 100%;
+    text-align: center;
 
     @include onTablet {
-      font-size: 54px;
+      text-align: initial;
+      font-size: 52px;
     }
 
     @include onDesktop {
-      font-size: 84px;
-    }
-
-    & span {
-      color: $c-light-brown;
-      font-weight: 700;
+      font-size: 68px;
     }
   }
 
   &__desc {
     width: 100%;
+    font-weight: 700;
     text-align: center;
-    font-size: 14px;
+    text-transform: uppercase;
 
     @include onTablet {
       text-align: initial;
@@ -99,58 +114,44 @@
 
     @include onDesktop {
       width: 450px;
-      font-size: 16px;
+      font-size: 24px;
     }
   }
 
-  &__img-container{
+  &__video {
     position: relative;
-
-    &::after {
-      content: "";
-      display: block;
-      width: 45%;
-      height: 45%;
-      position: absolute;
-      bottom: -50px;
-      left: -40px;
-      z-index: -1;
-      transform: rotate(60deg) rotateX(180deg);
-      background-image: url('../images/arrow.svg');
-      background-repeat: no-repeat;
-      background-size: contain;
-
-      @include onTablet {
-        transform: rotate(-140deg) rotateX(0deg);
-        width: 240px;
-        height: 240px;
-        bottom: -30px;
-        left: -140px;
-      }
-
-      @include onDesktop {
-        width: 380px;
-        height: 380px;
-        bottom: -20px;
-        left: -250px;
-      }
-    }
-  }
-
-  &__img {
-    padding-left: 70px;
     width: 100%;
-    filter: drop-shadow(10px 10px 20px $c-brown);
 
     @include onTablet {
-      padding-left: 0px;
-      width: 352px;
-      position: relative;
-      top: -40px;
+      position: absolute;
+      width: 95%;
+      max-width: 900px;
+      right: -150px;
+      transform: translateY(-20%);
+    }
+
+    @media (min-width: 900px) {
+      transform: translateY(-30%);
     }
 
     @include onDesktop {
-      width: 500px;
+      max-width: 1120px;
+      left: 360px;
+      transform: translateY(-180px);
+    }
+
+    &::after {
+      content: "";
+      z-index: 1;
+      display: block;
+      position: absolute;
+      inset: 0;
+      background-color: transparent;
+      box-shadow: inset 0px 0px 50px 50px $c-black;
+    }
+
+    video {
+      width: 100%;
     }
   }
 }

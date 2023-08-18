@@ -1,9 +1,10 @@
 .page {
-  font-family: 'Montserrat';
+  font-family: 'Tektur';
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: $c-black;
+  letter-spacing: 0.5px;
+  color: $c-white;
   scroll-behavior: smooth;
 
   &__body {
@@ -14,21 +15,21 @@
     }
   }
 
-  &__title {
-    // font-weight: 400;
-    // font-size: 48px;
-    // line-height: 85%;
-    // letter-spacing: -0.05em;
-    // text-transform: uppercase;
+  // &__title {
+  //   font-weight: 400;
+  //   font-size: 48px;
+  //   line-height: 85%;
+  //   letter-spacing: -0.05em;
+  //   text-transform: uppercase;
 
-    // @include tablet {
-    //   font-size: 56px;
-    // }
+  //   @include tablet {
+  //     font-size: 56px;
+  //   }
 
-    // @include desktop {
-    //   font-size: 72px;
-    // }
-  }
+  //   @include desktop {
+  //     font-size: 72px;
+  //   }
+  // }
 
   // &__menu {
   //   position: fixed;

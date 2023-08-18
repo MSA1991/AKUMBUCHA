@@ -2,22 +2,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 170px;
-  height: 46px;
-  background-color: $c-brown;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  color: $c-white;
-  font-weight: 700;
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+  box-shadow: $c-white 0 0 0 2px inset;
   letter-spacing: 1px;
+  font-weight: 700;
   text-transform: uppercase;
-  transition: all 0.25s;
-  outline: 2px solid $c-brown;
-  outline-offset: -4px;
+  transition: all $anim-time;
+
+  svg {
+    margin-right: 4px;
+    fill: $c-white;
+    transition: fill $anim-time;
+  }
 
   &:hover {
-    outline-offset: 2px;
-    box-shadow: 0px 0px 3px 3px $c-light-brown;
+    color: $c-black;
+    box-shadow: $c-blue 0 0 0 25px inset, 0 0 8px 2px $c-blue;
+
+    & svg {
+      fill: $c-black;
+    }
   }
 }

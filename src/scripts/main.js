@@ -35,25 +35,6 @@ links.forEach(link => {
   });
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-  const title = document.querySelector('.header__title span');
-  const textToType = title.innerText;
-
-  title.innerText = '';
-
-  setTimeout(() => {
-    let index = 0;
-    const typingInterval = setInterval(() => {
-      title.innerText += textToType[index];
-      index++;
-
-      if (index === textToType.length) {
-        clearInterval(typingInterval);
-      }
-    }, 300);
-  }, 400);
-});
-
 const options = {
   root: null,
   threshold: 0.5,
