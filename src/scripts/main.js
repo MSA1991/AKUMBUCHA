@@ -5,6 +5,7 @@ const burger = document.getElementById('burger');
 const menu = document.querySelector('.menu');
 const links = document.querySelectorAll('a');
 const navLinkMenu = document.querySelectorAll('.nav__link--menu');
+const animItems = document.querySelectorAll('.anim');
 
 burger.addEventListener('change', () => {
   menu.classList.toggle('menu--open');
@@ -35,23 +36,15 @@ links.forEach(link => {
   });
 });
 
-const options = {
-  root: null,
-  threshold: 0.5,
-};
-
-const callback = function(entries) {
+// eslint-disable-next-line no-undef
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('anim--active');
+      observer.unobserve(entry.target);
     }
   });
-};
-
-// eslint-disable-next-line no-undef
-const observer = new IntersectionObserver(callback, options);
-
-const animItems = document.querySelectorAll('.anim');
+}, { threshold: 0.4 });
 
 animItems.forEach(item => {
   observer.observe(item);
