@@ -20,7 +20,7 @@
   }
 }
 
-@keyframes text {
+@keyframes flash-text {
   0% {
     text-shadow: 0 0 0 $c-blue;
   }
@@ -41,5 +41,15 @@
   }
   100% {
     text-shadow: 0 0 0 $c-blue;
+  }
+}
+
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }

@@ -1,16 +1,36 @@
 .about-us {
-  padding: 40px 0;
+  overflow: hidden;
+  padding: 20px 0;
   background-color: $c-black;
+
+  @include onTablet {
+    padding: 40px 0;
+  }
 
   &__content {
     display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   &__img-container {
-    width: 650px;
-    flex-shrink: 0;
-    position: relative;
-    left: -70px;
+    width: 100%;
+
+    @include onTablet {
+      width: 60%;
+      flex-shrink: 0;
+      position: relative;
+      left: -40px;
+    }
+
+    @include onDesktop {
+      left: -60px;
+      width: 650px
+    }
 
      &::after {
       content: "";
@@ -27,7 +47,15 @@
   &__text {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    padding-top: 60px;
+    gap: 20px;
+    text-align: center;
+    margin: 0 20px;
+    font-size: 14px;
+
+    @include onTablet {
+      font-size: 16px;
+      margin: 0;
+      text-align: initial;
+    }
   }
 }

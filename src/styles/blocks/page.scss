@@ -20,10 +20,10 @@
     font-size: 32px;
     line-height: 85%;
     color: $c-blue;
-    animation: text 3s infinite;
+    animation: flash-text 3s infinite;
 
     @include onTablet {
-      font-size: 46px;
+      font-size: 42px;
     }
 
     @include onDesktop {

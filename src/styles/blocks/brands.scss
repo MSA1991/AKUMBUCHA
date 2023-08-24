@@ -1,0 +1,58 @@
+.brands {
+  background-color: $c-purple;
+  background: linear-gradient(0deg, $c-black 0%, $c-purple 10%, $c-purple 90%, $c-black 100%);
+
+  &__content {
+    display: flex;
+    align-items: center;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+
+    @include onTablet {
+      height: 300px;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 1px;
+      position: absolute;
+      z-index: 1;
+      top: 50px;
+      bottom: 50px;
+      background-color: $c-purple;
+    }
+
+    &::before {
+      left: 0px;
+      box-shadow: 2px 0px 10px 10px $c-purple;
+    }
+
+    &::after {
+      right: 0px;
+      box-shadow: -2px 0px 10px 10px $c-purple;
+    }
+  }
+
+  &__img-container {
+    min-width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    animation: slide 10s linear infinite;
+
+    @include onTablet {
+      min-width: 1800px;
+    }
+  }
+
+  &__img {
+    width: 140px;
+    filter: drop-shadow(0 0 20px rgba(112, 207, 255, 0.6));
+
+    @include onTablet {
+      width: 180px;
+    }
+  }
+}

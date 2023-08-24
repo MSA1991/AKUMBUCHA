@@ -3,7 +3,7 @@
   max-width: 1194px;
   padding: 0 20px;
 
-  &--full {
+  &--full-mobile {
     padding: 0;
   }
 
@@ -12,6 +12,10 @@
   }
 
   @include onDesktop {
+    padding: 0;
+  }
+
+  &--full-screen {
     padding: 0;
   }
 }
