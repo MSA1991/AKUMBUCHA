@@ -1,0 +1,58 @@
+.products {
+  overflow: hidden;
+  background-color: $c-black;
+  padding: 40px 0;
+
+  @include onTablet {
+    padding: 80px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 20px;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 14px;
+    text-align: center;
+
+    @include onTablet {
+      text-align: initial;
+    }
+
+    @include onDesktop {
+      font-size: 16px;
+    }
+  }
+
+  &__img {
+    width: 80%;
+    max-width: 500px;
+
+    @include onTablet {
+      width: 50%;
+      flex-shrink: 0;
+    }
+
+    img {
+      width: 100%;
+      transform: scaleX(-1);
+      filter: drop-shadow(0 0 10px $c-blue);
+    }
+  }
+}
