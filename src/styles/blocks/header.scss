@@ -1,7 +1,6 @@
 .header {
   overflow: hidden;
   padding: 14px 0 60px;
-  background-color: $c-black;
 
   @include onTablet {
     padding-bottom: 120px;

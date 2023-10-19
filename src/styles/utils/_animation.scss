@@ -20,29 +20,29 @@
   }
 }
 
-@keyframes flash-text {
-  0% {
-    text-shadow: 0 0 0 $c-blue;
-  }
-  50% {
-    text-shadow: 0 0 20px $c-blue;
-  }
-  80% {
-    text-shadow: 0 0 0 $c-blue;
-  }
-  85% {
-    text-shadow: 0 0 20px $c-blue;
-  }
-  90% {
-    text-shadow: 0 0 0 $c-blue;
-  }
-  95% {
-    text-shadow: 0 0 20px $c-blue;
-  }
-  100% {
-    text-shadow: 0 0 0 $c-blue;
-  }
-}
+// @keyframes flash-text {
+//   0% {
+//     text-shadow: 0 0 0 $c-blue;
+//   }
+//   50% {
+//     text-shadow: 0 0 20px $c-blue;
+//   }
+//   80% {
+//     text-shadow: 0 0 0 $c-blue;
+//   }
+//   85% {
+//     text-shadow: 0 0 20px $c-blue;
+//   }
+//   90% {
+//     text-shadow: 0 0 0 $c-blue;
+//   }
+//   95% {
+//     text-shadow: 0 0 20px $c-blue;
+//   }
+//   100% {
+//     text-shadow: 0 0 0 $c-blue;
+//   }
+// }
 
 
 @keyframes slide {

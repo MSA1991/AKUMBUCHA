@@ -49,3 +49,19 @@ const observer = new IntersectionObserver((entries) => {
 animItems.forEach(item => {
   observer.observe(item);
 });
+
+// eslint-disable-next-line no-unused-vars, no-undef
+const swiper = new Swiper('.swiper', {
+  loop: true,
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    // dynamicBullets: true,
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});

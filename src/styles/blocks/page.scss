@@ -8,10 +8,29 @@
   scroll-behavior: smooth;
 
   &__body {
-    background-color: $c-white;
+    background-color: $c-black;
 
     &--overflow {
       overflow: hidden;
+    }
+  }
+
+  &__section--purple {
+    padding: 60px 0;
+    background: linear-gradient(
+      0deg,
+      $c-black 0%,
+      $c-purple 10px,
+      $c-purple calc(100% - 10px),
+      $c-black 100%
+    );
+
+    @include onTablet {
+      padding: 80px 0;
+    }
+
+    @include onDesktop {
+      padding: 100px 0;
     }
   }
 
@@ -20,7 +39,8 @@
     font-size: 32px;
     line-height: 85%;
     color: $c-blue;
-    animation: flash-text 3s infinite;
+    text-shadow: 0 0 20px $c-blue;
+    // animation: flash-text 3s infinite;
 
     @include onTablet {
       font-size: 42px;
