@@ -6,6 +6,7 @@ const menu = document.querySelector('.menu');
 const links = document.querySelectorAll('a');
 const navLinkMenu = document.querySelectorAll('.nav__link--menu');
 const animItems = document.querySelectorAll('.anim');
+const toTop = document.querySelector('.page__to-top');
 
 burger.addEventListener('change', () => {
   menu.classList.toggle('menu--open');
@@ -64,4 +65,12 @@ const swiper = new Swiper('.swiper', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+});
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 800 && window.innerWidth > 1400) {
+    toTop.classList.add('page__to-top--active');
+  } else {
+    toTop.classList.remove('page__to-top--active');
+  }
 });

@@ -1,0 +1,53 @@
+.contacts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+
+  @include onTablet {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include onDesktop {
+    gap: 60px;
+  }
+
+  &__title {
+    font-size: 20px;
+    color: $c-blue;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      font-size: 24px;
+    }
+  }
+
+  &__link {
+    transition: all $anim-time;
+    font-size: 14px;
+
+    @include onDesktop {
+      font-size: 16px;
+    }
+
+    svg path {
+      fill: $c-white;
+      transition: all $anim-time;
+    }
+
+    &:hover {
+      color: $c-blue;
+      text-shadow: 0 0 4px $c-blue;
+
+      svg path {
+        fill: $c-blue;
+        filter: drop-shadow(0 0 2px $c-blue);
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+    height: 28px;
+  }
+}
