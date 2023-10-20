@@ -1,10 +1,6 @@
 .products {
   overflow: hidden;
-  padding: 40px 0;
-
-  @include onTablet {
-    padding: 80px 0;
-  }
+  position: relative;
 
   &__content {
     display: flex;
@@ -52,6 +48,24 @@
       width: 100%;
       transform: scaleX(-1);
       filter: drop-shadow(0 0 10px $c-blue);
+    }
+  }
+
+  &__decor {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: -1;
+    transform: rotate(45deg);
+
+    @include onDesktop {
+      display: block;
+    }
+
+    img {
+      width: 250px;
+      filter: drop-shadow(2px 2px 5px $c-gray);
     }
   }
 }

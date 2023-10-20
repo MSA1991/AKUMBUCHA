@@ -3,7 +3,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.7px;
   color: $c-white;
   user-select: none;
   scroll-behavior: smooth;
@@ -13,25 +13,6 @@
 
     &--overflow {
       overflow: hidden;
-    }
-  }
-
-  &__section--purple {
-    padding: 60px 0;
-    background: linear-gradient(
-      0deg,
-      $c-black 0%,
-      $c-purple 10px,
-      $c-purple calc(100% - 10px),
-      $c-black 100%
-    );
-
-    @include onTablet {
-      padding: 80px 0;
-    }
-
-    @include onDesktop {
-      padding: 100px 0;
     }
   }
 
@@ -51,6 +32,18 @@
 
     @include onDesktop {
       font-size: 52px;
+    }
+  }
+
+  &__section {
+    padding: 60px 0;
+
+    @include onTablet {
+      padding: 80px 0;
+    }
+
+    @include onDesktop {
+      padding: 100px 0;
     }
   }
 

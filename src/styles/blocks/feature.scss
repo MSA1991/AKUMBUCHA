@@ -1,15 +1,11 @@
 .feature {
-  padding: 40px 0 40px;
-  background: linear-gradient(0deg, $c-black 0%, $c-purple 10%, $c-purple 90%, $c-black 100%);
-
-  @include onTablet {
-    padding: 80px 0 80px;
-  }
+  @include section-gradient;
+  padding: 40px;
 
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
     align-items: center;
 
     @include onTablet {
@@ -25,7 +21,7 @@
     align-items: center;
     height: 180px;
     justify-content: space-between;
-    flex-basis: calc(50% - 15px);
+    flex-basis: calc(50% - 20px);
 
     p {
       width: 240px;

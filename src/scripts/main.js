@@ -58,7 +58,6 @@ const swiper = new Swiper('.swiper', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
-    // dynamicBullets: true,
   },
 
   navigation: {
@@ -68,7 +67,7 @@ const swiper = new Swiper('.swiper', {
 });
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 800 && window.innerWidth > 1400) {
+  if (window.scrollY > 500 && window.innerWidth > 1400) {
     toTop.classList.add('page__to-top--active');
   } else {
     toTop.classList.remove('page__to-top--active');

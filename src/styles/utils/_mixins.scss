@@ -9,3 +9,13 @@
     @content;
   }
 }
+
+@mixin section-gradient {
+  background: linear-gradient(
+    0deg,
+    $c-black 0%,
+    $c-purple 10px,
+    $c-purple calc(100% - 10px),
+    $c-black 100%
+  );
+}

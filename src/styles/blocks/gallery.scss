@@ -1,4 +1,7 @@
 .gallery {
+  @include section-gradient;
+  position: relative;
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -7,6 +10,31 @@
 
     @include onDesktop {
       gap: 60px;
+    }
+  }
+
+  &__decor {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    transform: rotate(-15deg);
+
+    &--minus {
+      top: inherit;
+      right: inherit;
+      bottom: 40px;
+      left: 40px;
+      transform: rotate(15deg);
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+
+    img {
+      width: 180px;
+      filter: drop-shadow(-2px 2px 5px $c-dark-purple);
     }
   }
 }
