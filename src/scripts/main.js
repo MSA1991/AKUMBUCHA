@@ -45,7 +45,7 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.3 });
 
 animItems.forEach(item => {
   observer.observe(item);

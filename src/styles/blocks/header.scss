@@ -21,6 +21,23 @@
     }
   }
 
+  // &__logo {
+  //   width: 116px;
+  //   height: 52px;
+  //   outline: none;
+  //   position: relative;
+  //   z-index: 3;
+
+  //   svg {
+  //     fill: $c-white;
+  //     transition: all $anim-time;
+  //   }
+
+  //   &:hover svg {
+  //     fill: $c-blue;
+  //     filter: drop-shadow(0 0 2px $c-blue);
+  //   }
+  // }
   &__logo {
     width: 116px;
     height: 52px;
@@ -29,14 +46,33 @@
     z-index: 3;
 
     svg {
-      fill: $c-white;
-      transition: all $anim-time;
+      transition: filter $anim-time;
+
+      path {
+        fill: $c-white;
+        transition: fill $anim-time;
+      }
     }
 
-    &:hover svg {
-      fill: $c-blue;
-      filter: drop-shadow(0 0 2px $c-blue);
+    &:hover {
+      svg {
+        filter: drop-shadow(0 0 2px $c-blue);
+
+        path {
+          fill: $c-blue;
+        }
+      }
     }
+
+    // svg {
+    //   fill: $c-white;
+    //   transition: all $anim-time;
+    // }
+
+    // &:hover svg {
+    //   fill: $c-blue;
+    //   filter: drop-shadow(0 0 2px $c-blue);
+    // }
   }
 
   &__nav {

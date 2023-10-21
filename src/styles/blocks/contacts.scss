@@ -14,9 +14,10 @@
   &__title {
     font-size: 20px;
     color: $c-blue;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
     @include onDesktop {
+      margin-bottom: 10px;
       font-size: 24px;
     }
   }
