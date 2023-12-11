@@ -1,0 +1,161 @@
+.header {
+  overflow: hidden;
+  padding: 14px 0 40px;
+
+  @include onTablet {
+    padding-bottom: 100px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 200px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__logo {
+    width: 116px;
+    height: 52px;
+    outline: none;
+    position: relative;
+    z-index: 3;
+
+    svg {
+      transition: filter $anim-time;
+
+      path {
+        fill: $c-white;
+        transition: fill $anim-time;
+      }
+    }
+
+    &:hover {
+      svg {
+        filter: drop-shadow(0 0 2px $c-blue);
+
+        path {
+          fill: $c-blue;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 60px;
+
+    @include onTablet {
+      margin-top: 120px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: inherit;
+    }
+
+    @include onDesktop {
+      margin-top: 180px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 2;
+    position: relative;
+
+    @include onTablet {
+      align-items: initial;
+      gap: 40px;
+    }
+  }
+
+  &__title {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 100%;
+    text-align: center;
+
+    @include onTablet {
+      text-align: initial;
+      font-size: 52px;
+    }
+
+    @include onDesktop {
+      font-size: 68px;
+    }
+  }
+
+  &__desc {
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include onTablet {
+      text-align: initial;
+      width: 350px;
+    }
+
+    @include onDesktop {
+      width: 450px;
+      font-size: 24px;
+    }
+  }
+
+  &__video {
+    position: relative;
+    width: 100%;
+
+    @include onTablet {
+      position: absolute;
+      width: 95%;
+      max-width: 900px;
+      right: -150px;
+      transform: translateY(-20%);
+    }
+
+    @media (min-width: 900px) {
+      transform: translateY(-30%);
+    }
+
+    @include onDesktop {
+      max-width: 1120px;
+      left: 360px;
+      transform: translateY(-180px);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: transparent;
+      box-shadow: inset 0px 0px 50px 50px $c-black;
+    }
+
+    video {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.page {
+  font-family: 'Tektur';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.7px;
+  color: $c-white;
+  user-select: none;
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $c-black;
+
+    &--overflow {
+      overflow: hidden;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 85%;
+    color: $c-blue;
+    text-align: center;
+    text-shadow: 0 0 20px $c-blue;
+
+    @include onTablet {
+      text-align: inherit;
+      font-size: 42px;
+    }
+
+    @include onDesktop {
+      font-size: 52px;
+    }
+  }
+
+  &__section {
+    padding: 60px 0;
+
+    @include onTablet {
+      padding: 80px 0;
+    }
+
+    @include onDesktop {
+      padding: 100px 0;
+    }
+  }
+
+  &__to-top {
+    display: none;
+    position: fixed;
+    transform: rotate(-45deg);
+    right: 50px;
+    bottom: 50px;
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    transition: all $anim-time;
+
+    svg {
+      transition: filter $anim-time;
+
+      g {
+        fill: $c-white;
+        transition: fill $anim-time;
+      }
+    }
+
+    &:hover svg {
+      filter: drop-shadow(0 0 4px $c-blue);
+
+      g {
+        fill: $c-blue;
+      }
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &--active {
+      opacity: 1;
+      pointer-events: auto;
+      bottom: 100px;
+    }
+  }
+}

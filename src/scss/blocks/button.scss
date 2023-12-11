@@ -1,0 +1,45 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px solid $c-white;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all $anim-time;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 0px;
+    background-color: $c-blue;
+    z-index: -1;
+    transition: all $anim-time;
+  }
+
+  svg {
+    margin-right: 4px;
+    fill: $c-white;
+    transition: fill $anim-time;
+  }
+
+  &:hover {
+    color: $c-black;
+    box-shadow: 0 0 8px 2px $c-blue;
+    border-color: $c-blue;
+
+    &::after {
+      width: 100%;
+      height: 100%;
+    }
+
+    & svg {
+      fill: $c-black;
+    }
+  }
+}

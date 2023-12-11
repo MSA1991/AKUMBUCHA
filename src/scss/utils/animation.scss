@@ -1,0 +1,30 @@
+.anim {
+  transition: all 1s;
+  opacity: 0;
+
+  &__bottom {
+    transform: translateY(40%);
+  }
+
+  &__left {
+    transform: translateX(-40%);
+  }
+
+  &__right {
+    transform: translateX(40%);
+  }
+
+  &--active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
