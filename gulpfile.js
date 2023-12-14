@@ -11,11 +11,6 @@ const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const fonter = require('gulp-fonter');
 const ttf2woff2 = require('gulp-ttf2woff2');
-const ghPages = require('gulp-gh-pages');
-
-function deploy() {
-  return src('dist/**/*.*').pipe(ghPages());
-}
 
 function fonts() {
   return src('src/fonts/raw/*.*')
@@ -108,7 +103,6 @@ exports.images = images;
 exports.fonts = fonts;
 exports.scripts = scripts;
 exports.watcher = watcher;
-exports.deploy = deploy;
 
 exports.build = series(cleanDist, html, building);
 exports.default = parallel(styles, images, scripts, fonts, watcher);
