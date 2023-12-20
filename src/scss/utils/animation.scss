@@ -3,15 +3,15 @@
   opacity: 0;
 
   &__bottom {
-    transform: translateY(40%);
+    transform: translateY(30%);
   }
 
   &__left {
-    transform: translateX(-40%);
+    transform: translateX(-30%);
   }
 
   &__right {
-    transform: translateX(40%);
+    transform: translateX(30%);
   }
 
   &--active {
